@@ -1,0 +1,22 @@
+.App {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-image: linear-gradient(79deg, #dcd4e8, #e0afda 48%, #e1c2ac);
+    min-height: 100vh;
+  }
+
+.auth-form-container{
+    border-radius: 10px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(79deg, #baa4e0, #e39fdc 48%, #f3ac7a);
+  }
+
+
+#spc {
+    margin: 10px;
+}
