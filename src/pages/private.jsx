@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
- 
-import Form from "react-bootstrap/Form";
+// import Form from "react-bootstrap/Form";
 import React from "react";
 import { app } from "../../lib/fetch-wrapper";
 import Container from "react-bootstrap/Container";
@@ -9,13 +8,13 @@ import Col from "react-bootstrap/Col";
 import { redirect } from "react-router-dom";
 import NavLogin from "../../components/Nav_logged/Navbar";
 import "./Dashboard.css";
-import { DiaryForm } from "../../components/Diary/DiaryForm";
 import { Outlet, Link } from "react-router-dom";
-import { AddDiary } from "../../components/Diary/addDiary";
 import { ProfileForm } from "../../components/Profile/ProfileForm";
-import { DiaryList } from "../../components/Diary/DiaryList";
+import { ProfileDiaryList } from "../../components/Profile/ProfileDiaryList";
 import { CategoryForm } from "../../components/Categories/CategoryForm";
 import { CategoryList } from "../../components/Categories/categoryList";
+// import {CategoryForm } from "../components/Categories/CategoryForm"
+import { PrivateList } from "../../components/private/privateList";
 
 export async function action({ request }) {
   const data = Object.fromEntries(await request.formData());
@@ -27,10 +26,10 @@ export async function action({ request }) {
     return null;
   }
 
-  return redirect("/dashboard");
+  return redirect("/profile");
 }
 
-export function Dashboard() {
+export function Private() {
   const [diaryId, setDiaryId] = useState(Date.now());
 
   useEffect(() => {
@@ -41,7 +40,7 @@ export function Dashboard() {
   return (
     <>
       <Row id="topborder">
-        <Col >
+        <Col>
           <NavLogin />
         </Col>
       </Row>
@@ -52,8 +51,7 @@ export function Dashboard() {
           </Col>
 
           <Col md={6} xs={12} id="rightborder">
-            <Outlet />
-            <DiaryList />
+            <PrivateList />
           </Col>
 
           <Col md={3} xs={12}>

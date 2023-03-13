@@ -1,4 +1,4 @@
-import "./Diary.css";
+import './diary.module.css'
 import { Link } from "react-router-dom";
 
 export function AddDiary() {

@@ -1,4 +1,8 @@
 .login-form, .register-form {
-    background:#E9F8F9;
+    background:#fff;
   }
   
+
+  #topborder{
+    border-top: solid 1px #ccc;
+  }

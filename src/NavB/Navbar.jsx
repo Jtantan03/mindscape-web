@@ -2,6 +2,7 @@ import { Component } from "react";
 import { MenuData } from "./MenuData";
 import "./NavbarStyles.css";
 import { Link } from 'react-router-dom';
+// import'./NavbarStyles.module.css'
 
 class Navbar extends Component {
   state = {clicked: false};
