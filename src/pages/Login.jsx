@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import { app } from "../../lib/fetch-wrapper";
 import { Link } from "react-router-dom";
 import './loginSign.module.css'
+import { useState } from "react";
 
 // this is for n / go back do dashboard while login
 export function loader() {
@@ -18,7 +19,12 @@ export async function action(request) {
   const res = await app.post("/login", request);
 
   if (!res.ok) {
-    console.error("An error has occurred");
+    const error = await res.json();
+    console.error("An error has occurred:", error.err);
+
+    // Display a notification to the user
+    alert(error.err); // Or use a more sophisticated notification component
+
     return null;
   }
 
@@ -27,9 +33,11 @@ export async function action(request) {
   return (window.location.href = "/dashboard");
 }
 
+
 export function LogIn() {
-  // this is for validation of the users
-  const handleSubmit = (event) => {
+  const [loginError, setLoginError] = useState(null); // <-- Add state variable
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const username = event.target.username.value;
     const password = event.target.password.value;
@@ -39,7 +47,12 @@ export function LogIn() {
       password: password,
     };
     console.log(data);
-    action(data);
+    const result = await action(data);
+
+    if (!res.ok) {
+      alert("Invalid username or password");
+      return;
+    }
   };
 
   return (
@@ -66,6 +79,7 @@ export function LogIn() {
         <Button variant="primary" type="submit">
           Log in
         </Button>
+        {loginError && <div className="error">{loginError}</div>} {/* <-- Display the error message */}
         <br></br>
         <Link to="/sign-up">
           <a>

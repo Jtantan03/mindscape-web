@@ -28,6 +28,11 @@ import {
 } from "../components/Categories/CategoryForm";
 import { Private } from "./pages/private";
 import { PrivateList } from "../components/private/privateList";
+// import { Categories } from "./pages/Categories";
+// import { CategoryFiremen } from "../components/Categories/CategoryFiremen";
+
+
+// import { CategoryFilter, action as CategoryFilterAction } from "../components/Categories/categoryList";
 
 // import { action as addDiaryAction } from '../components/Diary/addDiary';
 
@@ -53,8 +58,7 @@ const router = createBrowserRouter(
           action={DiaryAction}
         />
       </Route>
-      <Route path="/profile" element={<Profile />}>
-        <Route path="category" element={CategoryForm} action={CategoryAction} />
+      <Route path="/profile" element={<Profile />} action={CategoryAction}>
         <Route index element={<AddDiary />} />
         <Route
           path="diary"
@@ -63,10 +67,14 @@ const router = createBrowserRouter(
         />
       </Route>
       ,
-      <Route path="/private" element={<Private />}>
+      <Route path="/private" element={<Private />} action={CategoryAction}>
         <Route  index element={<PrivateList />} />
       </Route>
       ,
+      {/* <Route path="category/" element={<Categories />}>
+        <Route index element={<CategoryFiremen />}></Route>
+
+      </Route> */}
     </>,
   ])
 );

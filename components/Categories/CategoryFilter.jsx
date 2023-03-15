@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { app } from "../../lib/fetch-wrapper";
 // import styles from "./Profile.module.css";
 import styles from "./category.module.css";
+import { Link } from "react-router-dom";
 
-export function CategoryList() {
+export function CategoryFilter() {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -50,21 +51,13 @@ export function CategoryList() {
   return (
     <>
       <div>
-        <h2>Category List</h2>
-        <ul>
-          {categories.map((category) => (
-            <li id={styles.space} key={category.id}>
-              {category.category_name}
-              {/* <button
-                id={styles.right}
-                onClick={() => handleDelete(category.id)}
-              >
-                Delete
-              </button> */}
-            </li>
-          ))}
-          
-        </ul>
+        <h2>Category Filter</h2>
+        <Link to="doctor">as doctor
+        </Link><br></br>
+        <Link to="pilot">as pilot
+        </Link><br></br>
+        <Link to="firemen">as firemen
+        </Link>
       </div>
     </>
   );

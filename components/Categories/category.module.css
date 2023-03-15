@@ -6,3 +6,12 @@
 #topmargin {
     margin-top: 6%;
 }
+#right {
+    float: right;
+    color: white;
+    margin: 0px;
+    padding: 2px;
+}
+#space {
+    margin: 5pxs;
+}

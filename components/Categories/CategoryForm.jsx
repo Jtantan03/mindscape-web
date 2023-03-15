@@ -8,6 +8,7 @@ export async function action({ request }) {
   const data = Object.fromEntries(await request.formData());
   const res = await app.post("/categories", data);
 
+
   if (!res.ok) {
     console.error("An error has occurred!");
     return null;

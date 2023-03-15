@@ -20,7 +20,7 @@
 // export function DiaryForm({ redirectRoute }) {
 //   return (
 //     <>
-      
+
 //       <div id={styles.dv}>
 //       <div  className="grid-container"></div>
 //       <div className="diary-app">
@@ -122,7 +122,7 @@
 // }
 
 import React, { useState } from "react";
-import styles from './diary.module.css'
+import styles from "./diary.module.css";
 import { Form, redirect, useNavigate } from "react-router-dom";
 import { app } from "../../lib/fetch-wrapper";
 import { Link } from "react-router-dom";
@@ -139,7 +139,7 @@ export async function action({ request }) {
 }
 
 export function DiaryForm({ redirectRoute }) {
-  const navigate = useNavigate ();
+  const navigate = useNavigate();
   const [isPrivate, setIsPrivate] = useState(false);
 
   const handlePrivateChange = (event) => {
@@ -147,12 +147,11 @@ export function DiaryForm({ redirectRoute }) {
   };
 
   const handleSubmit = async (event) => {
-    
     event.preventDefault();
-    
+
     const data = Object.fromEntries(new FormData(event.target));
-    
-    console.log(data)
+
+    console.log(data);
     const res = await app.post("/pages", data);
 
     if (!res.ok) {
@@ -173,17 +172,18 @@ export function DiaryForm({ redirectRoute }) {
         </div>
         <Form method="post" className="register-form" onSubmit={handleSubmit}>
           <div className="diary-form">
+            <a>category</a>
+            <select name="categoryId">
+              <option value="20">as doctor</option>
+              <option value="21">as pilot</option>
+              <option value="22">as firemen</option>
+            </select>
             <input
               placeholder="Title..."
               className="diary-input"
               name="title"
             />
-            <input
-              type="date"
-              className="diary-date-input"
-              name="date"
-            />
-            
+            <input type="date" className="diary-date-input" name="date" />
           </div>
           <textarea
             rows="2"
@@ -192,14 +192,14 @@ export function DiaryForm({ redirectRoute }) {
             name="story"
           ></textarea>
           <label>
-              <input
-                type="checkbox"
-                name="private"
-                checked={isPrivate}
-                onChange={handlePrivateChange}
-              />
-              Private
-            </label>
+            <input
+              type="checkbox"
+              name="private"
+              checked={isPrivate}
+              onChange={handlePrivateChange}
+            />
+            Private
+          </label>
           <br></br>
           <button
             id={styles.marginButton}
@@ -210,7 +210,7 @@ export function DiaryForm({ redirectRoute }) {
           </button>
           <button id={styles.marginButton} className="diary-button">
             <Link to={redirectRoute} style={{ color: "white" }}>
-              cancel
+              Cancel
             </Link>
           </button>
         </Form>

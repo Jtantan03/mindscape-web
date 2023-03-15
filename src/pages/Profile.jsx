@@ -13,6 +13,7 @@ import { ProfileForm } from "../../components/Profile/ProfileForm";
 import { ProfileDiaryList } from "../../components/Profile/ProfileDiaryList";
 import { CategoryForm } from "../../components/Categories/CategoryForm";
 import { CategoryList } from "../../components/Categories/categoryList";
+import { CategoryFilter } from "../../components/Categories/CategoryFilter";
 // import {CategoryForm } from "../components/Categories/CategoryForm"
 
 export async function action({ request }) {
@@ -47,6 +48,7 @@ export function Profile() {
         <Row>
           <Col xs={12} md={3} id="rightborder">
             <ProfileForm />
+            {/* <CategoryFilter /> */}
           </Col>
 
           <Col md={6} xs={12} id="rightborder">
