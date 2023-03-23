@@ -30,11 +30,12 @@ export function CategoryForm() {
             />
             <button
               id={styles.borderline}
+              className={styles.Add}
               variant="primary"
               type="submit"
               style={{ color: "white" }}
             >
-              add
+              Add
             </button>
           </div>
         </Form>

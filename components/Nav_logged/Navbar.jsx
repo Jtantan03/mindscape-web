@@ -25,7 +25,7 @@ class NavLogin extends Component {
         
       <nav className="NarbarItems">
         <Link to="/dashboard"> <h1 className="logo">
-          mindscapes 
+          Mindscapes 
         </h1></Link>
         <div className="menu-icons"
         onClick={this.handleClick}>

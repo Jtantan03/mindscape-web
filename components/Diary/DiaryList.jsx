@@ -43,7 +43,7 @@ export function DiaryList() {
           <h3 id={styles.centerText}>{entry.title}</h3>
           <p id={styles.centerText}>{entry.story}</p>
           <p>{new Date(entry.date).toLocaleDateString('en-US', dateOptions)}</p>
-          <p>Written by: {entry.username}</p>
+          <p>written by: {entry.username}</p>
         </div>
       ))}
     </div>

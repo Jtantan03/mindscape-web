@@ -1,61 +1,62 @@
 textarea {
-    padding: 14px 32px 14px 16px;
-    margin-top: -15px;
-    border-radius: 4px;
-    border: none;
-    outline: none;
-    width: 100%;
-    height: 150px;
-    box-shadow: 3px 3px 3px 0px rgb(0 0 0 / 10%);
-    margin-top: 2%;
-    margin-bottom: 2%;
-    resize: none;
-  }
-  
-  #modal {
-    position: fixed;
-    top: 0;
-    background-color: white;
-    width: 50%;
-    height: 80%;
-    border-radius: 5px;
-    padding: 20px;
-    margin: auto;
-    top: 20px;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color: #fff !important;
-    border: solid 1.5px;
-  }
-  #divmodal {
-    height: 80% !important;
-    position: relative !important;
-    background-color: #fff !important;
-  }
+  padding: 14px 32px 14px 16px;
+  margin-top: -15px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 150px;
+  box-shadow: 3px 3px 3px 0px rgb(0 0 0 / 10%);
+  margin-top: 2%;
+  margin-bottom: 2%;
+  resize: none;
+}
 
-  #dash {
-    border-bottom: 3px dashed #000;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-  }
+#modal {
+  position: fixed;
+  top: 0;
+  background-color: white;
+  width: 50%;
+  height: 80%;
+  border-radius: 5px;
+  padding: 20px;
+  margin: auto;
+  top: 20px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #fff !important;
+  border: solid 1.5px;
+}
+#divmodal {
+  height: 80% !important;
+  position: relative !important;
+  background-color: #fff !important;
+}
+
+#dash {
+  border-bottom: 3px dashed #000;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
 
 .showModal {
   border-radius: 10px 10px 10px 10px;
 }
 
-  #dv{
-    background-color: #fff;
-    border-radius: 10px 10px 10px 10px;
-    padding: 5%;
-    margin-bottom: 5%;
-    box-shadow: 3px 3px 3px 0px rgb(0 0 0 / 10%);
+#dv {
+  background-color: #fff;
+  border-radius: 10px 10px 10px 10px;
+  padding: 5%;
+  margin-bottom: 5%;
+  box-shadow: 3px 3px 3px 0px rgb(0 0 0 / 10%);
+  border: 1px solid #ccc;
 }
 #leftText {
   text-align: left;
 }
 
-#round{
+#round {
   border-radius: 50%;
 }
 #dash {
@@ -64,36 +65,71 @@ textarea {
   padding-bottom: 10px;
 }
 
-#toprmargin{
+#toprmargin {
   padding-top: 5%;
 }
 
-#centerText{
+#private {
+  text-align: right;
+  color: #0b5ed7;
+}
+
+#centerText {
   text-align: center;
   margin-top: 10px;
 }
-  input {
-    border: 1px solid #ccc;
-    margin-top: 10px;
-    padding: 14px 32px 14px 16px;
-    margin-right: 10px;
-    border-radius: 4px;
-    border: none;
-    height: 50px;
-    outline: none;
-    width: 100%;
-    box-shadow: 3px 3px 3px 0px rgb(0 0 0 / 10%);
-  }
+input {
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  padding: 14px 32px 14px 16px;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: none;
+  height: 50px;
+  outline: none;
+  width: 100%;
+  box-shadow: 3px 3px 3px 0px rgb(0 0 0 / 10%);
+}
 
-  #checkBox{
-    width: 32px;
-    height: 20px;
-  }
+#checkBox {
+  width: 32px;
+  height: 20px;
+}
 
 button {
   border-radius: 10px;
   background-color: #0b5ed7;
   padding: 10px;
   text-decoration: none;
-    
+}
+
+#delete {
+  float: right;
+  color: red;
+  background-color: #ffffff !important;
+}
+
+#spaceborder {
+
+  background-color: #0b5ed7;
+  width: 120px;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+}
+#inborder {
+  border: 1px solid #ffffff;
+  background-color: #0b5ed7;
+  margin: 5px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+#inborder:hover {
+  background-color: #fff;
+  color: #060606;
+}
+
+#linkD{
+  text-decoration: none;
+  color: #060606;
 }

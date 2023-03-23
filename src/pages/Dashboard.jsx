@@ -47,19 +47,18 @@ export function Dashboard() {
       </Row>
       <Container>
         <Row>
-          <Col xs={12} md={3} id="rightborder">
+          <Col xs={12} md={4} id="rightborder">
             <ProfileForm />
+            <CategoryForm />
+            <CategoryList />
           </Col>
 
-          <Col md={6} xs={12} id="rightborder">
+          <Col md={8} xs={12} id="rightborder">
             <Outlet />
             <DiaryList />
           </Col>
 
-          <Col md={3} xs={12}>
-            <CategoryForm />
-            <CategoryList />
-          </Col>
+          
         </Row>
       </Container>
     </>

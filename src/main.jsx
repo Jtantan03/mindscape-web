@@ -28,13 +28,16 @@ import {
 } from "../components/Categories/CategoryForm";
 import { Private } from "./pages/private";
 import { PrivateList } from "../components/private/privateList";
-// import { Categories } from "./pages/Categories";
-// import { CategoryFiremen } from "../components/Categories/CategoryFiremen";
+import { Categories } from "./pages/Categories";
+import { CategoryFiremen } from "../components/Categories/CategoryFiremen";
 
 
 // import { CategoryFilter, action as CategoryFilterAction } from "../components/Categories/categoryList";
 
 // import { action as addDiaryAction } from '../components/Diary/addDiary';
+
+
+
 
 const router = createBrowserRouter(
   createRoutesFromElements([
@@ -71,10 +74,10 @@ const router = createBrowserRouter(
         <Route  index element={<PrivateList />} />
       </Route>
       ,
-      {/* <Route path="category/" element={<Categories />}>
+      <Route path="/category/:id" element={<Categories />}>
         <Route index element={<CategoryFiremen />}></Route>
 
-      </Route> */}
+      </Route>
     </>,
   ])
 );

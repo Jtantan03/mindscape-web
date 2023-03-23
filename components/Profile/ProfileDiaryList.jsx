@@ -71,6 +71,8 @@
 import React, { useEffect, useState } from "react";
 import { app } from "../../lib/fetch-wrapper";
 import styles from "./Profile.module.css";
+import { FaTrashAlt } from "react-icons/fa";
+import { RiGitRepositoryPrivateFill } from "react-icons/ri";
 
 const dateOptions = { month: "short", day: "numeric", year: "numeric" };
 
@@ -199,96 +201,103 @@ export function ProfileDiaryList() {
   }
 
   return (
-    <div className="diary-list">
-      {diaryEntries.map((entry) => (
-        <div id={styles.dv} key={entry.id} className="diary-entry">
-          <h2 id={styles.dash}>{entry.username}'s diary entries </h2>
-          <h3 id={styles.centerText}>{entry.title}</h3>
-          {entry.private ? (
-            <p id={styles.centerText}>
-              {entry.story} <br></br>This diary entry is private.
-            </p>
-          ) : (
+    <>
+      <div className="diary-list">
+        {diaryEntries.map((entry) => (
+          <div id={styles.dv} key={entry.id} className="diary-entry">
+            <h2 id={styles.dash}>{entry.username}'s diary entries</h2>
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <h3 id={styles.centerText} style={{ flex: 1 }}>
+                {entry.title}
+              </h3>
+              {entry.private && (
+                <h5 id={styles.private}>
+                  <RiGitRepositoryPrivateFill
+                    style={{ verticalAlign: "middle" }}
+                    title="in private"
+                  />
+                </h5>
+              )}
+            </div>
+
             <p id={styles.centerText}>{entry.story}</p>
-          )}
-          <p>{new Date(entry.date).toLocaleDateString("en-US", dateOptions)}</p>
-          <p>Written by: {entry.username}</p>
-          {/* <h2 id={styles.dash}>{entry.username}'s diary entries</h2>
-          <h3>{entry.title}</h3>
-          <p>{entry.story}</p>
-          <p>{new Date(entry.date).toLocaleDateString("en-US", dateOptions)}</p> */}
-          <button
-            id={styles.button}
-            style={{ color: "white" }}
-            onClick={() => handleDelete(entry.id)}
-          >
-            Delete
-          </button>
-          <button
-            id={styles.button}
-            style={{ color: "white" }}
-            onClick={() => handleEdit(entry)}
-          >
-            Edit
-          </button>
-        </div>
-      ))}
-      {showEditModal && (
-        <div>
-          <section id={styles.modal}>
-            <h2>Edit Entry</h2>
-            <form onSubmit={handleSubmit}>
-              <label htmlFor="title">Title</label>
-              <input
-                type="text"
-                id="title"
-                name="title"
-                value={editedEntry.title}
-                onChange={handleChange}
+            <p>
+              {new Date(entry.date).toLocaleDateString("en-US", dateOptions)}
+            </p>
+            <p>Written by: {entry.username}</p>
+            <button
+              id={styles.button}
+              style={{ color: "white" }}
+              onClick={() => handleEdit(entry)}
+            >
+              Edit
+            </button>
+            <button id={styles.delete}>
+              <FaTrashAlt
+                title="delete"
+                style={{ color: "red" }}
+                onClick={() => handleDelete(entry.id)}
               />
-              <label htmlFor="story">Story</label>
-              <textarea
-                id="story"
-                name="story"
-                value={editedEntry.story}
-                onChange={handleChange}
-              />
-              <label htmlFor="date">Date</label>
-              <input
-                type="date"
-                id="date"
-                name="date"
-                value={editedEntry.date}
-                onChange={handleChange}
-              />
-              <label>private</label>
-              <input
-                id={styles.checkBox}
-                type="checkbox"
-                checked={editedEntry.private}
-                // id="private"
-                name="private"
-                value={editedEntry.private}
-                onChange={handleChange}
-              />
-              <button
-                type="button"
-                onClick={handleSubmit}
-                style={{ color: "white" }}
-              >
-                Save
-              </button>
-              <button
-                type="button"
-                style={{ color: "white" }}
-                onClick={cancelEdit}
-              >
-                Cancel
-              </button>
-            </form>
-          </section>
-        </div>
-      )}
-    </div>
+            </button>
+          </div>
+        ))}
+        {showEditModal && (
+          <div>
+            <section id={styles.modal}>
+              <h2>Edit Entry</h2>
+              <form onSubmit={handleSubmit}>
+                <label htmlFor="title">Title</label>
+                <input
+                  type="text"
+                  id="title"
+                  name="title"
+                  value={editedEntry.title}
+                  onChange={handleChange}
+                />
+                <label htmlFor="story">Story</label>
+                <textarea
+                  id="story"
+                  name="story"
+                  value={editedEntry.story}
+                  onChange={handleChange}
+                />
+                <label htmlFor="date">Date</label>
+                <input
+                  type="date"
+                  id="date"
+                  name="date"
+                  value={editedEntry.date}
+                  onChange={handleChange}
+                />
+                <label>private</label>
+                <input
+                  id={styles.checkBox}
+                  type="checkbox"
+                  checked={editedEntry.private}
+                  // id="private"
+                  name="private"
+                  value={editedEntry.private}
+                  onChange={handleChange}
+                />
+                <button
+                  type="button"
+                  onClick={handleSubmit}
+                  style={{ color: "white" }}
+                >
+                  Save
+                </button>
+                <button
+                  type="button"
+                  style={{ color: "white" }}
+                  onClick={cancelEdit}
+                >
+                  Cancel
+                </button>
+              </form>
+            </section>
+          </div>
+        )}
+      </div>
+    </>
   );
 }

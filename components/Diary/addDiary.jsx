@@ -6,7 +6,7 @@ export function AddDiary() {
     <>
       <div>
         <Link to="diary">
-          <h1>Add Diary</h1>
+          <h1>add diary</h1>
         </Link>
       </div>
     </>
