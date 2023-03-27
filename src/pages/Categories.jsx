@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
- 
+
 import Form from "react-bootstrap/Form";
 import React from "react";
 import { app } from "../../lib/fetch-wrapper";
@@ -17,10 +17,9 @@ import { DiaryList } from "../../components/Diary/DiaryList";
 import { CategoryForm } from "../../components/Categories/CategoryForm";
 import { CategoryList } from "../../components/Categories/categoryList";
 import { CategoryFilter } from "../../components/Categories/CategoryFilter";
-import { CategoryFiremen } from "../../components/Categories/CategoryFiremen";
+
 export async function action({ request }) {
   const data = Object.fromEntries(await request.formData());
-  console.log(data);
   const res = await app.post("/users", data);
 
   if (!res.ok) {
@@ -42,25 +41,21 @@ export function Categories() {
   return (
     <>
       <Row id="topborder">
-        <Col >
+        <Col>
           <NavLogin />
         </Col>
       </Row>
       <Container>
         <Row>
-          <Col xs={12} md={3} id="rightborder">
+          <Col xs={12} md={4} id="rightborder">
             <ProfileForm />
-            <CategoryFilter />
-          </Col>
-
-          <Col md={6} xs={12} id="rightborder">
-            <Outlet />
-            <CategoryFiremen />
-          </Col>
-
-          <Col md={3} xs={12}>
             <CategoryForm />
             <CategoryList />
+          </Col>
+
+          <Col md={8} xs={12} id="rightborder">
+            <Outlet />
+            <CategoryFilter />
           </Col>
         </Row>
       </Container>

@@ -1,72 +1,3 @@
-// import React, { useEffect, useState } from "react";
-// import { app } from "../../lib/fetch-wrapper";
-// import styles from "./Profile.module.css"
-
-// export function ProfileDiaryList() {
-//   const [diaryEntries, setDiaryEntries] = useState([]);
-
-//   useEffect(() => {
-//     async function fetchDiaryEntries() {
-//       const token = localStorage.getItem("token");
-//       const res = await app.get("/pages/:id", {
-//         headers: {
-//           Authorization: `Bearer ${token}`,
-//         },
-//       });
-//       if (res.ok) {
-//         const entries = await res.json();
-//         // sort entries by date in descending order
-//         entries.data.sort((a, b) => new Date(b.date) - new Date(a.date));
-//         setDiaryEntries(entries.data);
-//       } else {
-//         console.error("An error has occurred while fetching diary entries.");
-//       }
-//     }
-
-//     fetchDiaryEntries();
-//   }, []);
-
-//   async function handleDelete(id) {
-//     const confirmation = window.confirm(
-//       "Are you sure you want to delete this diary entry?"
-//     );
-//     if (!confirmation) {
-//       return;
-//     }
-//     const token = localStorage.getItem("token");
-//     const res = await app.delete(`/pages/${id}`, {
-//       headers: {
-//         Authorization: `Bearer ${token}`,
-//       },
-//     });
-//     if (res.ok) {
-//       const updatedEntries = diaryEntries.filter((entry) => entry.id !== id);
-//       setDiaryEntries(updatedEntries);
-//     } else {
-//       console.error(
-//         `An error has occurred while deleting the entry with ID ${id}.`
-//       );
-//     }
-//   }
-//   return (
-//     <div className="diary-list">
-//       {diaryEntries.map((entry) => (
-//         <div id={styles.dv} key={entry.id} className="diary-entry" >
-//         <h2 id={styles.dash}>{entry.username}'s diary entries </h2>
-//         <h3 id={styles.centerText}>{entry.title}</h3>
-//         <p id={styles.centerText}>{entry.story}</p>
-//         <p>{entry.date}</p>
-//           <p>Written by: {entry.username}</p>
-//           <button
-//             style={{ color: "white" }}
-//             onClick={() => handleDelete(entry.id)}>
-//             Delete
-//           </button>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// }
 
 import React, { useEffect, useState } from "react";
 import { app } from "../../lib/fetch-wrapper";
@@ -173,7 +104,7 @@ export function ProfileDiaryList() {
         ...editedEntry,
       },
     });
-    console.log(res);
+
     if (res.ok) {
       // update the entry in the diaryEntries state
       const updatedEntries = diaryEntries.map((entry) =>
@@ -269,7 +200,7 @@ export function ProfileDiaryList() {
                   value={editedEntry.date}
                   onChange={handleChange}
                 />
-                <label>private</label>
+                <label>private
                 <input
                   id={styles.checkBox}
                   type="checkbox"
@@ -278,7 +209,7 @@ export function ProfileDiaryList() {
                   name="private"
                   value={editedEntry.private}
                   onChange={handleChange}
-                />
+                /></label>
                 <button
                   type="button"
                   onClick={handleSubmit}

@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState } from "react";
 import styles from "./diary.module.css";
 import { Form, redirect, useNavigate } from "react-router-dom";
@@ -72,9 +70,9 @@ export function DiaryForm({ redirectRoute }) {
           <div className="diary-form">
             <a>category</a>
             <select name="categoryId">
-            {categories.map((category) => (
-              <option value={category.id}>{category.category_name}</option>
-                 ))} 
+              {categories.map((category) => (
+                <option value={category.id}>{category.category_name}</option>
+              ))}
             </select>
             <input
               placeholder="Title..."
@@ -90,13 +88,14 @@ export function DiaryForm({ redirectRoute }) {
             name="story"
           ></textarea>
           <label>
+            private
             <input
+              id={styles.privatebox}
               type="checkbox"
               name="private"
               checked={isPrivate}
               onChange={handlePrivateChange}
             />
-            Private
           </label>
           <br></br>
           <button

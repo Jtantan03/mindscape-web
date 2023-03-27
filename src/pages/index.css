@@ -1,8 +1,8 @@
-.login-form, .register-form {
-    background:#fff;
-  }
-  
+.login-form,
+.register-form {
+  background: #fff;
+}
 
-  #topborder{
-    border-top: solid 1px #ccc;
-  }
+#topborder {
+  border-top: solid 1px #ccc;
+}

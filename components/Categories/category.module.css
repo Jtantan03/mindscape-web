@@ -21,3 +21,40 @@
 .Add {
     margin-top: 10%;
 }
+
+#linkD{
+    text-decoration: none;
+    color: #0b5ed7;
+  }
+  
+  #linkD:hover {
+    text-decoration: none;
+    color: #060606;
+  }
+
+  #dv {
+    background-color: #fff;
+    border-radius: 10px 10px 10px 10px;
+    padding: 5%;
+    margin-bottom: 5%;
+    box-shadow: 3px 3px 3px 0px rgb(0 0 0 / 10%);
+    border: 1px solid #ccc;
+    margin-top: 2%;
+  }
+  #leftText {
+    text-align: left;
+  }
+  
+  #dash {
+    border-bottom: 3px dashed #000;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+  #centerText {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  #pos {
+    float: right;
+  }

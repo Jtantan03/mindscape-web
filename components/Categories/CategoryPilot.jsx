@@ -101,7 +101,7 @@ export function ProfileDiaryList() {
         ...editedEntry,
       },
     });
-    console.log(res);
+
     if (res.ok) {
       // update the entry in the diaryEntries state
       const updatedEntries = diaryEntries.map((entry) =>
@@ -143,10 +143,6 @@ export function ProfileDiaryList() {
           )}
           <p>{new Date(entry.date).toLocaleDateString("en-US", dateOptions)}</p>
           <p>Written by: {entry.username}</p>
-          {/* <h2 id={styles.dash}>{entry.username}'s diary entries</h2>
-          <h3>{entry.title}</h3>
-          <p>{entry.story}</p>
-          <p>{new Date(entry.date).toLocaleDateString("en-US", dateOptions)}</p> */}
           <button
             id={styles.button}
             style={{ color: "white" }}

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
- 
+
 import Form from "react-bootstrap/Form";
 import React from "react";
 import { app } from "../../lib/fetch-wrapper";
@@ -19,7 +19,6 @@ import { CategoryList } from "../../components/Categories/categoryList";
 
 export async function action({ request }) {
   const data = Object.fromEntries(await request.formData());
-  console.log(data);
   const res = await app.post("/users", data);
 
   if (!res.ok) {
@@ -41,7 +40,7 @@ export function Dashboard() {
   return (
     <>
       <Row id="topborder">
-        <Col >
+        <Col>
           <NavLogin />
         </Col>
       </Row>
@@ -57,8 +56,6 @@ export function Dashboard() {
             <Outlet />
             <DiaryList />
           </Col>
-
-          
         </Row>
       </Container>
     </>

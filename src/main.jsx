@@ -29,15 +29,7 @@ import {
 import { Private } from "./pages/private";
 import { PrivateList } from "../components/private/privateList";
 import { Categories } from "./pages/Categories";
-import { CategoryFiremen } from "../components/Categories/CategoryFiremen";
-
-
-// import { CategoryFilter, action as CategoryFilterAction } from "../components/Categories/categoryList";
-
-// import { action as addDiaryAction } from '../components/Diary/addDiary';
-
-
-
+import { CategoryFilter } from "../components/Categories/CategoryFilter";
 
 const router = createBrowserRouter(
   createRoutesFromElements([
@@ -52,8 +44,7 @@ const router = createBrowserRouter(
         <Route index element={<LogIn />} loader={LoginLoader} />
       </Route>
       ,
-      <Route path="/dashboard" element={<Dashboard />} action={CategoryAction} >
-
+      <Route path="/dashboard" element={<Dashboard />} action={CategoryAction}>
         <Route index element={<AddDiary />} />
         <Route
           path="diary"
@@ -71,12 +62,11 @@ const router = createBrowserRouter(
       </Route>
       ,
       <Route path="/private" element={<Private />} action={CategoryAction}>
-        <Route  index element={<PrivateList />} />
+        <Route index element={<PrivateList />} />
       </Route>
       ,
       <Route path="/category/:id" element={<Categories />}>
-        <Route index element={<CategoryFiremen />}></Route>
-
+        <Route index element={<CategoryFilter />}></Route>
       </Route>
     </>,
   ])

@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 // import "./Diary.css";
 import { app } from "../../lib/fetch-wrapper";
@@ -14,20 +13,18 @@ export function ProfileForm() {
       const response = await app.get("/users/me", {
         headers: { Authorization: `Bearer ${token}` },
       });
-      console.log(response.data);
       // const user = response.data[0];
 
       // setUsername(user.username);
       if (response.ok) {
         const entries = await response.json();
-        
+
         setUsername(entries.data.username);
-       
       }
     }
     fetchData();
   }, [token]);
-  console.log(username);
+
   return (
     <>
       <div id={styles.toprmargin}>
@@ -44,16 +41,16 @@ export function ProfileForm() {
             className="profile-picture-input"
             name="profile_pic"
           /> */}
-          
-          <Link to="/profile" name="username">
-          <h3>{username}</h3>
+
+          <Link to="/profile" name="username" id={styles.linkD}>
+            <h3>{username}</h3>
           </Link>
           <div id={styles.spaceborder}>
             <div id={styles.inborder}>
-          <Link id={styles.linkD} to="/private" name="username">
-          <h3>private</h3>
-          </Link>
-          </div>
+              <Link id={styles.linkD} to="/private" name="username">
+                <h3>private</h3>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

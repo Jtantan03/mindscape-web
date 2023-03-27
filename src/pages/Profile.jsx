@@ -18,7 +18,6 @@ import { CategoryFilter } from "../../components/Categories/CategoryFilter";
 
 export async function action({ request }) {
   const data = Object.fromEntries(await request.formData());
-  console.log(data);
   const res = await app.post("/users", data);
 
   if (!res.ok) {

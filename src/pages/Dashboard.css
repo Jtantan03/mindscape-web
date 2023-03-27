@@ -1,21 +1,19 @@
 body {
+  background-color: #fff !important;
+  padding-top: 10%;
+}
+
+#topborder {
+  border-top: solid 1px #ccc;
+}
+
+#rightborder {
+  border-right: solid 1px #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  body {
     background-color: #fff !important;
-    padding-top: 10%;
-}
-
-
-
-#topborder{
-    border-top: solid 1px #ccc;
+    padding-top: 85px;
   }
-
-#rightborder{
-    border-right: solid 1px #ccc;
-}
-
-@media screen and (max-width: 600px){
-    body {
-        background-color: #fff !important;
-        padding-top: 85px;
-    }
 }

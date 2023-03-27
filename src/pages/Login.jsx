@@ -2,12 +2,11 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { app } from "../../lib/fetch-wrapper";
 import { Link } from "react-router-dom";
-import './loginSign.module.css'
+import "./loginSign.module.css";
 import { useState } from "react";
 
 // this is for n / go back do dashboard while login
 export function loader() {
-  console.log("Open login");
   if (localStorage.getItem("token")) {
     return (window.location.href = "/dashboard");
   }
@@ -32,7 +31,6 @@ export async function action(request) {
   localStorage.setItem("token", token); // for dashboard localStorage.token or gettoken( 'token', token )
   return (window.location.href = "/dashboard");
 }
-
 
 export function LogIn() {
   const [loginError, setLoginError] = useState(null); // <-- Add state variable
@@ -79,7 +77,8 @@ export function LogIn() {
         <Button variant="primary" type="submit">
           Log in
         </Button>
-        {loginError && <div className="error">{loginError}</div>} {/* <-- Display the error message */}
+        {loginError && <div className="error">{loginError}</div>}{" "}
+        {/* <-- Display the error message */}
         <br></br>
         <Link to="/sign-up">
           <a>
