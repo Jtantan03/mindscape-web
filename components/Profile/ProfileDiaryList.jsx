@@ -137,10 +137,8 @@ export function ProfileDiaryList() {
         {diaryEntries.map((entry) => (
           <div id={styles.dv} key={entry.id} className="diary-entry">
             <h2 id={styles.dash}>{entry.username}'s diary entries</h2>
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <h3 id={styles.centerText} style={{ flex: 1 }}>
-                {entry.title}
-              </h3>
+            <div style={{ display: "flex" }}>
+              <h3 id={styles.centerText} style={{ flex: 1 }}>{entry.title}</h3>
               {entry.private && (
                 <h5 id={styles.private}>
                   <RiGitRepositoryPrivateFill
@@ -152,10 +150,10 @@ export function ProfileDiaryList() {
             </div>
 
             <p id={styles.centerText}>{entry.story}</p>
-            <p>
+            <p id={styles.rightText}>
               {new Date(entry.date).toLocaleDateString("en-US", dateOptions)}
             </p>
-            <p>Written by: {entry.username}</p>
+            <p id={styles.rightText}>Written by: {entry.username}</p>
             <button
               id={styles.button}
               style={{ color: "white" }}

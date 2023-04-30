@@ -36,26 +36,30 @@ export function PrivateList() {
 
   return (
     <>
-    <h3>private diary</h3>
+      <h3>private diary</h3>
       <div>
-        
         {diaryEntries.map((entry) => (
           <div id={styles.dv} key={entry.id} className="diary-entry">
             <h2 id={styles.dash}>{entry.username}'s diary entries </h2>
-            <h3 id={styles.centerText}>{entry.title}</h3>
-            {entry.private && (
-              <h5 id={styles.private}>
-                <RiGitRepositoryPrivateFill
-                  style={{ verticalAlign: "middle" }}
-                  title="in private"
-                />
-              </h5>
-            )}
-            <p id={styles.centerText}>{entry.story}</p>
-            <p>
+            <div style={{ display: "flex" }}>
+              <h3 id={styles.centerText} style={{ flex: 1 }}>
+                {entry.title}
+              </h3>
+              {entry.private && (
+                <h5 id={styles.private}>
+                  <RiGitRepositoryPrivateFill
+                    style={{ verticalAlign: "middle" }}
+                    title="in private"
+                  />
+                </h5>
+              )}
+            </div>
+
+            <p id={styles.leftText}>{entry.story}</p>
+            <p id={styles.rightText}>
               {new Date(entry.date).toLocaleDateString("en-US", dateOptions)}
             </p>
-            <p>written by: {entry.username}</p>
+            <p id={styles.rightText}>written by: {entry.username}</p>
           </div>
         ))}
       </div>

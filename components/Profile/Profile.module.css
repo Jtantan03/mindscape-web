@@ -55,6 +55,10 @@ textarea {
 #leftText {
   text-align: left;
 }
+#rightText {
+  text-align: right;
+  margin-bottom: 0px;
+}
 
 #round {
   border-radius: 50%;

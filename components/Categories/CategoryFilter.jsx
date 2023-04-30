@@ -38,10 +38,10 @@ export function CategoryFilter() {
             </h2>
             <h3 id={styles.centerText}>{entry.title}</h3>
             <p id={styles.centerText}>{entry.story}</p>
-            <p>
+            <p id={styles.rightText}>
               {new Date(entry.date).toLocaleDateString("en-US", dateOptions)}
             </p>
-            <p>written by: {entry.username}</p>
+            <p id={styles.rightText}>written by: {entry.username}</p>
           </div>
         ))}
       </div>
