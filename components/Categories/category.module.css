@@ -10,7 +10,7 @@
 #right {
 
     color: red;
-    margin: 0px;
+    margin: 2px;
     padding-top: 5px;
     background-color: #ffffff !important; 
 }
@@ -33,7 +33,7 @@
   }
 
   #dv {
-    background-color: #fff;
+    background-color: #fffdf7;
     border-radius: 10px 10px 10px 10px;
     padding: 5%;
     margin-bottom: 5%;

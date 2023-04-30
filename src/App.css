@@ -21,7 +21,7 @@ body {
   align-items: center;
   justify-content: center;
   color: rgb(1, 1, 1);
-  background: #fff;
+  background: #fffdf7;
   min-height: 100%;
 }
 .auth-form-container{   
@@ -31,7 +31,7 @@ body {
   margin-top: 100px;
   display: flex;
   flex-direction: column;
-  background: #fff;
+  background: #fffdf7;
   box-shadow: 3px 3px 3px 0px rgb(0 0 0 / 10%);
 }
 
